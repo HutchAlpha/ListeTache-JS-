@@ -1,5 +1,5 @@
 # ListeTache-JS-
-Petit défis à réaliser le plus rapidement possible
+Petit défis à réaliser le plus rapidement possible (HTML, CSS, JavaScript) 
 
 ## Interface utilisateur :
 

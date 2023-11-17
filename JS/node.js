@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const formElement = document.getElementById('taskForm');
     const tacheInputElement = document.getElementById('Tache');
     const tasksTableBody = document.getElementById('tasksTableBody');
+    var supprimer = document.getElementsByClassName('supprimer');
 
     if (formElement && tacheInputElement && tasksTableBody) {
         // Gestionnaire d'événements pour le formulaire
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             newRow.innerHTML = `
                 <td>${tacheValue}</td>
                 <td>Non</td>
-                <td>Options ici</td>
+                <td><button class="supprimer">Supprimer</button></td>
             `;
 
             // Ajout de la nouvelle ligne à la fin du corps du tableau
@@ -29,4 +30,17 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         console.error('Éléments introuvables dans le DOM');
     }
+
+    tasksTableBody.addEventListener('click', function(event) {
+        // Vérifiez si le clic a été effectué sur un bouton avec la classe "supprimer"
+        if (event.target.classList.contains('supprimer')) {
+            // Obtenez la ligne parente du bouton cliqué (tr)
+            var row = event.target.closest('tr');
+
+        if (row) {
+            row.remove();
+        }
+    }
+    });
+
 });

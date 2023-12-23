@@ -5,13 +5,13 @@ Petit défis à réaliser le plus rapidement possible (HTML, CSS, JavaScript)
 
 - Une zone où l'utilisateur peut saisir une nouvelle tâche. => [x]
 - Une liste affichant les tâches actuelles. => [x]
-- Chaque tâche doit avoir une option pour la marquer comme terminée ou la supprimer.
+- Chaque tâche doit avoir une option pour la marquer comme terminée ou la supprimer.=> [x]
 
 ## Fonctionnalités :
 
 - Ajouter une nouvelle tâche à la liste lorsque l'utilisateur appuie sur "Ajouter". => [x]
-- Marquer une tâche comme terminée en la soulignant ou en changeant sa couleur.
-- Supprimer une tâche de la liste lorsque l'utilisateur appuie sur un bouton de suppression.
+- Marquer une tâche comme terminée en la soulignant ou en changeant sa couleur => [x]
+- Supprimer une tâche de la liste lorsque l'utilisateur appuie sur un bouton de suppression => [x]
 
 ## Stockage :
 

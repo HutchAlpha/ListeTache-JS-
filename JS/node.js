@@ -43,10 +43,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function changeColor(checkbox) {
             const row = checkbox.closest('tr');
+            const audioElement = document.getElementById('feu');
             if (checkbox.checked) {
                 row.style.backgroundColor = 'rgb(219, 219, 162)';
+                audioElement.play();
             } else {
-                row.style.backgroundColor = ''; 
+                row.style.backgroundColor = '';
+                audioElement.pause();
+                audioElement.currentTime = 0;
             }
         }
         

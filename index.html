@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Projet ListeTache-JS</title>
-    <link rel="stylesheet" href="CSS/style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Projet ListeTache-JS</title>
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
 
-<body>
-    <h1 class="center">Liste de Tâche Personnalisé</h1>
+    <body>
+        <h1 class="center">Liste de Tâche Personnalisé</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Nom de la Tâche</th>
-                <th>Validé ?</th>
-                <th>Option </th>
-            </tr>
-        </thead>
-        <tbody id="tasksTableBody">
-            
-        </tbody>
-    </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom de la Tâche</th>
+                    <th>Validé ?</th>
+                    <th>Option </th>
+                </tr>
+            </thead>
+            <tbody id="tasksTableBody">
+                
+            </tbody>
+        </table>
 
-    <h2>Créer votre tâche</h2>
-    <br />
-
-    <!-- Utilisation de la balise form pour le formulaire -->
-    <form action="" method="post" class="taskForm" id="taskForm">
-        <div class="form-example">
-            <label for="Tache">Entrer votre tâche: </label>
-            <input type="text" name="Tache" id="Tache" required />
-        </div>
-
+        <h2>Créer votre tâche</h2>
         <br />
 
-        <input type="submit" value="Valider votre tâche" />
-    </form>
+        <!-- Utilisation de la balise form pour le formulaire -->
+        <form action="" method="post" class="taskForm" id="taskForm">
+            <div class="form-example">
+                <label for="Tache">Entrer votre tâche: </label>
+                <input type="text" name="Tache" id="Tache" required />
+            </div>
 
-    <script type="module" src="JS/node.js"></script>
-</body>
+            <br />
 
+            <input type="submit" value="Valider votre tâche" />
+        </form>
+
+        <script type="module" src="JS/node.js"></script>
+    </body>
+
+    <audio id="feu" autoplay>
+        <source src="Music/feu.mp3" type="audio/mp3">
+    </audio>
 </html>

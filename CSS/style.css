@@ -1,23 +1,22 @@
 th{
-width: 100%;
-border: 1px solid;
-color:black;
-background-color: orange;
+    width: 100%;
+    border: 1px solid;
+    color:black;
+    background-color: orange;
 }
 
 td {
-border: 1px solid;
+    border: 1px solid;
 }
+
 .supprimer{
-
-background-color: #F0360A;
-border: 0px;
-
+    background-color: #F0360A;
+    border: 0px;
 }
 
 .center{
-        text-align:center;
-    }
+    text-align:center;
+}
 
 h1, h2, h3, h4, h5, h6{
     font-family:Noto Sans, sans-serif ;

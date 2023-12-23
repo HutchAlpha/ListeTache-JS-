@@ -1,11 +1,20 @@
-
-
 th{
 width: 100%;
 border: 1px solid;
-color:orange;
+color:black;
+background-color: orange;
 }
 
+td {
+border: 1px solid;
+}
 .supprimer{
 
-background-color: red;}
+background-color: #F0360A;
+border: 0px;
+
+}
+
+.center{
+        text-align:center;
+    }

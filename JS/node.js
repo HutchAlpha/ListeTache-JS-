@@ -1,24 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
     const formElement = document.getElementById('taskForm');
     const tacheInputElement = document.getElementById('Tache');
-    const tasksTableBody = document.getElementById('tasksTableBody');
+    const remplisage = document.getElementById('remplisage');
 
-    if (formElement && tacheInputElement && tasksTableBody) {
+    if (formElement && tacheInputElement && remplisage) {
         function onSubmitForm(event) {
             event.preventDefault();
-
             const tacheValue = tacheInputElement.value;
 
             // Création d'une nouvelle ligne dans le tableau
             const newRow = document.createElement('tr');
             newRow.innerHTML = `
-                <td>${tacheValue}</td>
-                <td class="center"><input type="checkbox" id="check" name="check"/></td>
-                <td><button class="supprimer">Supprimer</button></td>
+                <td class="tache">${tacheValue}</td>
+                <td class="spe"><input type="checkbox" id="check" name="check"/></td>
+                <td class="spe"><button class="supprimer">Supprimer</button></td>
             `;
 
             // Ajout de la nouvelle ligne à la fin du corps du tableau
-            tasksTableBody.appendChild(newRow);
+            remplisage.appendChild(newRow);
 
             const checkbox = newRow.querySelector('input[type="checkbox"]');
             checkbox.addEventListener('change', function() {
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         formElement.addEventListener('submit', onSubmitForm);
 
-        tasksTableBody.addEventListener('click', function(event) {
+        remplisage.addEventListener('click', function(event) {
             if (event.target.classList.contains('supprimer')) {
                 var row = event.target.closest('tr');
 
@@ -53,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 audioElement.currentTime = 0;
             }
         }
-        
-    } else {
+    } 
+    else {
         console.error('Éléments introuvables dans le DOM');
     }
 });

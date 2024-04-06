@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const formElement = document.getElementById('taskForm');
     const tacheInputElement = document.getElementById('Tache');
     const remplisage = document.getElementById('remplisage');
+    const audioElement = document.getElementById('feu');
+    audioElement.pause();
 
-    if (formElement && tacheInputElement && remplisage) {
+    if (formElement && tacheInputElement && remplisage && audioElement) {
         function onSubmitForm(event) {
             event.preventDefault();
             const tacheValue = tacheInputElement.value;
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const newRow = document.createElement('tr');
             newRow.innerHTML = `
                 <td class="tache">${tacheValue}</td>
-                <td class="spe"><input type="checkbox" id="check" name="check"/></td>
+                <td class="spe"><input type="checkbox" name="check"/></td>
                 <td class="spe"><button class="supprimer">Supprimer</button></td>
             `;
 
@@ -42,10 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function changeColor(checkbox) {
             const row = checkbox.closest('tr');
-            const audioElement = document.getElementById('feu');
             if (checkbox.checked) {
                 row.style.backgroundColor = 'rgb(219, 219, 162)';
-                audioElement.play();
+                audioElement.play(); 
             } else {
                 row.style.backgroundColor = '';
                 audioElement.pause();

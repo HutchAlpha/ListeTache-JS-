@@ -46,7 +46,8 @@ th:hover {
 }
 
 .supprimer{
-    background-color: #F0360A;
+    background-color: rgba(240, 54, 10, 0.8);
+    color: white;
     border: 0px;
 }
 

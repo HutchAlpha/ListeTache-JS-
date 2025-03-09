@@ -1,49 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Projet ListeTache-JS</title>
-        <link rel="stylesheet" href="CSS/style.css">
-        <link rel="icon" href="logo.png">
-    </head>
-
-    <body>
-        <div class="clogo">
-            <img class="logo" src="logo.png" alt="Logo">
-        </div>
-        
-        
-        <h1 class="center">Liste de Tâche Personnalisé</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th class="tache">Nom de la Tâche</th>
-                    <th class="spe">▼</th>
-                    <th class="spe">Option</th>
-                </tr>
-            </thead>
-            <tbody id="remplisage">
-                
-            </tbody>
-        </table>
-
-        <h2>Créer votre tâche</h2>
-        <br />
-
-        <!-- Utilisation de la balise form pour le formulaire -->
-        <form action="" method="post" class="taskForm" id="taskForm">
-            <div class="form-example">
-                <label for="Tache">Entrer votre tâche: </label>
-                <input type="text" name="Tache" id="Tache" required />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de Tâches Personnalisée</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="glass-card">
+            <div class="card-header">
+                <div class="logo-container">
+                    <img class="logo" src="logo.png" alt="Logo">
+                </div>
+                <h1>Liste de Tâches Personnalisée</h1>
             </div>
-            <br />
-            <input type="submit" value="Valider votre tâche" />
-        </form>
+            
+            <div class="card-content">
+                <!-- Table des tâches -->
+                <div class="task-table">
+                    <div class="table-header">
+                        <div class="task-name">Nom de la Tâche</div>
+                        <div class="task-status">État</div>
+                        <div class="task-options">Options</div>
+                    </div>
+                    
+                    <div id="task-list" class="task-list">
+                        <!-- Les tâches seront ajoutées ici par JavaScript -->
+                        <div class="empty-state">Aucune tâche pour le moment. Ajoutez-en une !</div>
+                    </div>
+                </div>
 
-        <script type="module" src="JS/node.js"></script>
-    </body>
+                <!-- Formulaire d'ajout de tâche -->
+                <div class="add-task-section">
+                    <h2>Créer votre tâche</h2>
+                    <form id="task-form" class="task-form">
+                        <div class="form-group">
+                            <input type="text" id="task-input" placeholder="Entrer votre tâche..." required>
+                            <button type="submit" class="add-btn">
+                                <i class="fas fa-plus-circle"></i> Ajouter
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-    <audio id="feu" autoplay><source src="Music/Click.mp3" type="audio/mp3"></audio>
+            <div class="card-footer">
+                <button id="delete-all-btn" class="delete-all-btn" disabled>
+                    <i class="fas fa-trash"></i> Tout supprimer
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmation -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Êtes-vous sûr ?</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Cette action va supprimer toutes vos tâches. Cette action est irréversible.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-delete" class="cancel-btn">Annuler</button>
+                <button id="confirm-delete" class="confirm-btn">Confirmer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Modal d'édition -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Modifier la tâche</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="edit-task-input" placeholder="Nouveau nom de la tâche">
+                <input type="hidden" id="edit-task-id">
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-edit" class="cancel-btn">Annuler</button>
+                <button id="confirm-edit" class="confirm-btn">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="click-sound" src="Music/Click.mp3"></audio>
+    <script src="JS/node.js"></script>
+</body>
 </html>
